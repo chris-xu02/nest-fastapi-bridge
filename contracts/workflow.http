@@ -1,0 +1,11 @@
+### Save workflow (Nest owns auth)
+POST http://localhost:3000/api/workflows
+Content-Type: application/json
+
+{"workflowId":"wf-1","machineId":"m-1","version":2}
+
+### Run step (Python owns execution)
+POST http://localhost:8000/internal/steps/run
+Content-Type: application/json
+
+{"workflowId":"wf-1","stepId":"step-a"}
